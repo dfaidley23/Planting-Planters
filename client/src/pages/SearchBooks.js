@@ -80,6 +80,7 @@ const SearchBooks = () => {
 
   return (
     <>
+    <iframe scrolling="no" frameborder="0" title="Hardiness Map" height="650px" width="1300px" data-src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9" src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9"></iframe>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
           <h1>Search for Books!</h1>
