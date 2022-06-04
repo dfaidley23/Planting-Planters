@@ -71,7 +71,8 @@ const SearchPlants = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
+      <Jumbotron fluid className='text-light text-center background'>
+    <h1 className="textWhite">Find your Area</h1>
     <iframe scrolling="no" frameborder="0" title="Hardiness Map" height="650px" width="1100px" data-src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9" src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9"></iframe>
         <Container>
           <h1>Search for Plants!</h1>
