@@ -84,7 +84,7 @@ const SearchPlants = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for a plant'
                 />
               </Col>
               <Col xs={12} md={4}>
