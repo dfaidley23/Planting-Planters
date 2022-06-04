@@ -1,3 +1,15 @@
+:root {
+  --grey:rgb(119, 135, 139);
+  --white:rgb(235, 248, 255);
+  --red:rgb(248, 118, 102);
+  --green:rgb(4, 36, 28);
+  
+  }
+
+.background{
+ background-color: rgb(119, 135, 139);
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }
@@ -14,4 +26,26 @@ h6 {
 .small {
   font-weight: 300;
   font-style: italic;
+}
+
+.homeImg{
+    height: 5%;
+    width: 75%;
+    justify-content: center;
+}
+
+#homeHeader{
+  text-align: center;
+}
+
+.introStyle{
+  margin-top: 8rem;
+}
+
+.header{
+  background-color: var(--green);
+}
+
+.textColor{
+  color:var(--white);
 }
