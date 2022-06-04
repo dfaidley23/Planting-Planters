@@ -49,3 +49,23 @@ h6 {
 .textColor{
   color:var(--white);
 }
+
+.dot {
+  height: 150px;
+  width: 150px;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 15px 0px 15px;
+  border: .5px solid var(--white);
+}
+
+.center{
+  justify-content: center;
+}
+
+.splitter{
+  background-color: var(--green);
+  height:15px;
+  width:100%;
+}
