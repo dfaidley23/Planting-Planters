@@ -26,8 +26,8 @@ const typeDefs = gql`
     sun: String
     lifeSpan: String
     medianLifespan: String
-    firstHarvet: String
-    lastHarvet: String
+    firstHarvest: String
+    lastHarvest: String
     height: String
     spread: String
     image: String
@@ -41,8 +41,8 @@ const typeDefs = gql`
     sun: String
     lifeSpan: String
     medianLifespan: String
-    firstHarvet: String
-    lastHarvet: String
+    firstHarvest: String
+    lastHarvest: String
     height: String
     spread: String
     image: String

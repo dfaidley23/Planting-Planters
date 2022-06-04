@@ -5,7 +5,8 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "develop": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "develop1": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "develop2": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },

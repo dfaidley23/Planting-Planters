@@ -1,4 +1,4 @@
-"id","name","scientific_name","category","hardiness","sun","life_span","median_lifespan","first_harvet_expected","last_harvet_expected","height","spread","photo"
+"id","name","scientificName","category","hardiness","sun","lifeSpan","medianLifespan","firstHarvest","lastHarvest","height","spread","photo"
 "1","Onion","Allium cepa","Vegtable","","","Annual","34w","36","46","1cm","15cm","https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/56857be71083470003000000.jpg?1451588582"
 "2","Tomato","Solanum lycopersicum","Fruit","","","Annual","21w","13","16","","","https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/5dc3618ef2c1020004f936e4.jpg?1573085580"
 "3","Lettuce","Lactuca sativa","","","Plant in Partial Sun","Annual","15w","5","11","20cm","15cm","https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/576b87bafe8d750003000424.jpg?1466664889"
