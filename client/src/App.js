@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,11 +41,15 @@ function App() {
           <Routes>
             <Route 
               path='/' 
-              element={<SearchBooks />} 
+              element={<Home />} 
             />
             <Route 
               path='/saved' 
               element={<SavedBooks />} 
+            />
+            <Route
+              path='/search'
+              element={<SearchBooks />}
             />
             <Route 
               path='*'
