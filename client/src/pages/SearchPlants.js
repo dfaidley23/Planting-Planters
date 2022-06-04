@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-import { ADD_BOOK } from '../utils/mutations';
+import { ADD_PLANT } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import { savePlantIds, getSavedPlantIds } from '../utils/localStorage';
 
-const SearchBooks = () => {
-  // create state for holding returned google api data
-  const [searchedBooks, setSearchedBooks] = useState([]);
-  // create state for holding our search field data
+const SearchPlants = () => {
+  const [searchedPlants, setSearchedPlants] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
-  // create state to hold saved bookId values
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
-  const [addBook] = useMutation(ADD_BOOK);
+  const [savedPlantIds, setSavedPlantIds] = useState(getSavedPlantIds());
+  const [addPlant] = useMutation(ADD_PLANT);
 
-  // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
-  // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
-    return () => saveBookIds(savedBookIds);
+    return () => savePlantIds(savedPlantIds);
   });
 
-  // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -39,25 +33,23 @@ const SearchBooks = () => {
 
       const { items } = await response.json();
 
-      const bookData = items.map((book) => ({
-        bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+      const plantData = items.map((plant) => ({
+        bookId: plant.id,
+        authors: plant.volumeInfo.authors || ['No author to display'],
+        title: plant.volumeInfo.title,
+        description: plant.volumeInfo.description,
+        image: plant.volumeInfo.imageLinks?.thumbnail || '',
       }));
 
-      setSearchedBooks(bookData);
+      setSearchedPlants(plantData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
     }
   };
 
-  // create function to handle saving a book to our database
-  const handleSaveBook = async (bookId) => {
-    // find the book in `searchedBooks` state by the matching id
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+  const handleSavePlant = async (plantId) => {
+    const plantToSave = searchedPlants.find((plant) => plant.plantId === plantId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -67,12 +59,11 @@ const SearchBooks = () => {
     }
 
     try {
-      await addBook({
-        variables: { input: bookToSave },
+      await addPlant({
+        variables: { input: plantToSave },
       });
 
-      // if book successfully saves to user's account, save book id to state
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      setSavedPlantIds([...savedPlantIds, plantToSave.plantId]);
     } catch (err) {
       console.error(err);
     }
@@ -83,7 +74,7 @@ const SearchBooks = () => {
     <iframe scrolling="no" frameborder="0" title="Hardiness Map" height="650px" width="1300px" data-src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9" src="https://usdaars.maps.arcgis.com/apps/webappviewer/index.html?id=00a463f18c254d39b5dd6274cc4f92f9"></iframe>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for Books!</h1>
+          <h1>Search for Plants!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -108,29 +99,29 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+          {searchedPlants.length
+            ? `Viewing ${searchedPlants.length} results:`
+            : 'Search for a plant to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedPlants.map((plant) => {
             return (
-              <Card key={book.bookId} border='dark'>
-                {book.image ? (
-                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+              <Card key={plant.plantId} border='dark'>
+                {plant.image ? (
+                  <Card.Img src={plant.image} alt={`The cover for ${plant.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{plant.title}</Card.Title>
+                  <p className='small'>Authors: {plant.authors}</p>
+                  <Card.Text>{plant.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
+                      disabled={savedPlantIds?.some((savedPlantId) => savedPlantId === plant.plantId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveBook(book.bookId)}>
-                      {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
-                        : 'Save this Book!'}
+                      onClick={() => handleSavePlant(plant.plantId)}>
+                      {savedPlantIds?.some((savedPlantId) => savedPlantId === plant.plantId)
+                        ? 'This plant has already been saved!'
+                        : 'Save this Plant!'}
                     </Button>
                   )}
                 </Card.Body>
@@ -143,4 +134,4 @@ const SearchBooks = () => {
   );
 };
 
-export default SearchBooks;
+export default SearchPlants;
