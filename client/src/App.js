@@ -11,6 +11,7 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,8 +36,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <div className="flex-column justify-flex-start min-100-vh">
-          <div className="container">
+      <div className="flex-column justify-flex-start min-100-vh background">
+          <div className="">
           <Navbar />
           <Routes>
             <Route 
@@ -59,6 +60,7 @@ function App() {
           </div>
         </div>
       </Router>
+      <Footer></Footer>
     </ApolloProvider>
   );
 }
