@@ -60,6 +60,13 @@ h6 {
   border: .5px solid var(--white);
 }
 
+.imgFormat {
+  height:150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 20px 0px 15px 0px;
+}
+
 .center{
   justify-content: center;
 }
