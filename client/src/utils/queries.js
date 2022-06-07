@@ -8,12 +8,18 @@ export const GET_ME = gql`
       email
       plantCount
       savedPlants {
-        bookId
-        authors
+        name
+        scientificName
+        category
+        hardiness
+        sun
+        lifeSpan
+        medianLifespang
+        firstHarvest
+        lastHarvest
+        height
+        spread
         image
-        link
-        title
-        description
       }
     }
   }

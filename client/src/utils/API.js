@@ -28,7 +28,7 @@ export const loginUser = (userData) => {
   });
 };
 
-// save book data for a logged in user
+// save plant data for a logged in user
 export const savePlant = (plantData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
@@ -40,7 +40,7 @@ export const savePlant = (plantData, token) => {
   });
 };
 
-// remove saved book data for a logged in user
+// remove saved plant data for a logged in user
 export const deletePlant = (plantId, token) => {
   return fetch(`/api/users/plants/${plantId}`, {
     method: 'DELETE',
@@ -50,8 +50,8 @@ export const deletePlant = (plantId, token) => {
   });
 };
 
-// make a search to google books api
-// https://www.googleapis.com/books/v1/volumes?q=harry+potter
-export const searchGoogleBooks = (query) => {
-  return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+// make a search to plant db
+// https://www.googleapis.com/plants/v1/volumes?q=harry+potter
+export const searchPlantDB = (query) => {
+  return fetch(`https://www.googleapis.com/plants/v1/volumes?q=${query}`);
 };

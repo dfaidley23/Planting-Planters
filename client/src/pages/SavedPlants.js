@@ -12,7 +12,7 @@ const SavedPlants = () => {
 
   const userData = data?.me || [];
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+  // create function that accepts the bplantsook's mongo _id value as param and deletes the plant from the database
   const handleDeletePlant = async (plantId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
