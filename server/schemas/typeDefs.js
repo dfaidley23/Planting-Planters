@@ -33,7 +33,6 @@ const typeDefs = gql`
     image: String
   }
   input savedPlants {
-    plantId: String
     name: String
     scientificName: String
     category: String

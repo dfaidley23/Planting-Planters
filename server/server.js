@@ -21,8 +21,12 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 };
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/'));
 });
 
 const startApolloServer = async (typeDefs, resolvers) => {
@@ -30,7 +34,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
 
   db.once('open', () => {
-    app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`${server.graphqlPath}🌍 Now listening on localhost:${PORT}`));
   })
 };
 
