@@ -32,12 +32,18 @@ export const ADD_PLANT = gql`
       email
       plantCount
       savedPlants {
-        bookId
-        authors
+        name
+        scientificName
+        category
+        hardiness
+        sun
+        lifeSpan
+        medianLifespang
+        firstHarvest
+        lastHarvest
+        height
+        spread
         image
-        link
-        title
-        description
       }
     }
   }
@@ -51,12 +57,18 @@ export const REMOVE_PLANT = gql`
       email
       plantCount
       savedPlants {
-        bookId
-        authors
+        name
+        scientificName
+        category
+        hardiness
+        sun
+        lifeSpan
+        medianLifespang
+        firstHarvest
+        lastHarvest
+        height
+        spread
         image
-        link
-        title
-        description
       }
     }
   }

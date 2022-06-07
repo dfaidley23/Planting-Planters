@@ -19,19 +19,32 @@ const typeDefs = gql`
   }
   type Plant {
     plantId: String
-    authors: [String]
-    description: String
-    title: String
+    name: String
+    scientificName: String
+    category: String
+    hardiness: String
+    sun: String
+    lifeSpan: String
+    medianLifespan: String
+    firstHarvest: String
+    lastHarvest: String
+    height: String
+    spread: String
     image: String
-    link: String
   }
   input savedPlants {
-    description: String
-    title: String
-    plantId: String
+    name: String
+    scientificName: String
+    category: String
+    hardiness: String
+    sun: String
+    lifeSpan: String
+    medianLifespan: String
+    firstHarvest: String
+    lastHarvest: String
+    height: String
+    spread: String
     image: String
-    link: String
-    authors: [String]
   }
   type Auth {
     token: ID!
