@@ -3,7 +3,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import { useMutation } from '@apollo/client';
 import { ADD_PLANT } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { searchGoogleBooks } from '../utils/API';
+import { searchPlantDB } from '../utils/API';
 import { savePlantIds, getSavedPlantIds } from '../utils/localStorage';
 
 const SearchPlants = () => {
@@ -25,7 +25,7 @@ const SearchPlants = () => {
     }
 
     try {
-      const response = await searchGoogleBooks(searchInput);
+      const response = await searchPlantDB(searchInput);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -34,8 +34,8 @@ const SearchPlants = () => {
       const { items } = await response.json();
 
       const plantData = items.map((plant) => ({
-        bookId: plant.id,
-        authors: plant.volumeInfo.authors || ['No author to display'],
+        plantId: plant.id,
+        authors: plant.volumeInfo.authors || ['No plant to display'],
         title: plant.volumeInfo.title,
         description: plant.volumeInfo.description,
         image: plant.volumeInfo.imageLinks?.thumbnail || '',
