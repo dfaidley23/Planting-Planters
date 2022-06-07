@@ -52,11 +52,20 @@ const SavedPlants = () => {
           {userData.savedPlants.map((plant) => {
             return (
               <Card key={plant.plantId} border='dark'>
-                {plant.image ? <Card.Img src={plant.image} alt={`The cover for ${plant.title}`} variant='top' /> : null}
+                {plant.image ? <Card.Img src={plant.image} alt={`The picture for ${plant.name}`} variant='top' /> : null}
                 <Card.Body>
-                  <Card.Title>{plant.title}</Card.Title>
-                  <p className='small'>Authors: {plant.authors}</p>
-                  <Card.Text>{plant.description}</Card.Text>
+                  <Card.Title>{plant.name}</Card.Title>
+                  {/* <p className='small'>Authors: {plant.authors}</p> */}
+                  <Card.Text>{plant.scientificName}</Card.Text>
+                  <Card.Text>{plant.category}</Card.Text>
+                  <Card.Text>{plant.hardiness}</Card.Text>
+                  <Card.Text>{plant.sun}</Card.Text>
+                  <Card.Text>{plant.lifeSpan}</Card.Text>
+                  <Card.Text>{plant.medianLifespan} weeks </Card.Text>
+                  <Card.Text>{plant.firstHarvest} weeks after planting</Card.Text>
+                  <Card.Text>{plant.lastHarvest} weeks after planting</Card.Text>
+                  <Card.Text>{plant.height}</Card.Text>
+                  <Card.Text>{plant.spread}</Card.Text>
                   <Button className='btn-block btn-danger' onClick={() => handleDeletePlant(plant.plantId)}>
                     Delete this Plant!
                   </Button>

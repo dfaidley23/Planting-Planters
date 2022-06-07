@@ -35,10 +35,10 @@ const SearchPlants = () => {
 
       const plantData = items.map((plant) => ({
         plantId: plant.id,
-        authors: plant.volumeInfo.authors || ['No plant to display'],
-        title: plant.volumeInfo.title,
-        description: plant.volumeInfo.description,
-        image: plant.volumeInfo.imageLinks?.thumbnail || '',
+        name: plant.name || ['No plant to display'],
+        scientificName: plant.scientificName,
+        category: plant.category,
+        image: plant.imageLinks?.thumbnail || '',
       }));
 
       setSearchedPlants(plantData);
@@ -109,11 +109,11 @@ const SearchPlants = () => {
             return (
               <Card key={plant.plantId} border='dark'>
                 {plant.image ? (
-                  <Card.Img src={plant.image} alt={`The cover for ${plant.title}`} variant='top' />
+                  <Card.Img src={plant.image} alt={`The cover for ${plant.name}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{plant.title}</Card.Title>
-                  <p className='small'>Authors: {plant.authors}</p>
+                  <Card.Title>{plant.name}</Card.Title>
+                  {/* <p className='small'>Authors: {plant.authors}</p> */}
                   <Card.Text>{plant.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
