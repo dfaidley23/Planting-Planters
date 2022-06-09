@@ -1,4 +1,4 @@
-# Employee Tracker
+# Planting Planters
 
 ## GitHub Repository & Deployed Application
 * https://github.com/dfaidley23/Planting-Planters
