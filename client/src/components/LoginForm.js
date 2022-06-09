@@ -82,6 +82,9 @@ const LoginForm = () => {
           variant='success'>
           Submit
         </Button>
+        <Button href='ForgotPassword'>
+          Reset Password
+        </Button>
       </Form>
     </>
   );

@@ -41,7 +41,6 @@ var arr = [];
         var r = Math.floor(Math.random() * 15) + 1;
         if(arr.indexOf(r) === -1) arr.push(r);
     }
-    console.log(arr);
 
 
 
@@ -50,7 +49,7 @@ return(
 <div className="my-0 splitter">
 </div>
 <div className=" pt-5 container-auto translate-middle center">
-<div class="">
+<div className="">
 <h2 className="text-center textWhite">Popular plants!</h2>
 </div>
 

@@ -12,6 +12,7 @@ import SavedPlants from './pages/SavedPlants';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import ForgotPassword from './pages/ForgotPassword';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -51,6 +52,10 @@ function App() {
             <Route
               path='/search'
               element={<SearchPlants />}
+            />
+            <Route
+              path='/ForgotPassword'
+              element={<ForgotPassword />}
             />
             <Route 
               path='*'
