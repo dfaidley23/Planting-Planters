@@ -5,7 +5,7 @@ const plantSeeds = require('./plantSeeds.json');
 db.once('open', async () => {
   try {
 
-    await Plant.create(plantSeeds);
+    await Plant.insertMany(plantSeeds);
 
   } catch (err) {
     console.error(err);
