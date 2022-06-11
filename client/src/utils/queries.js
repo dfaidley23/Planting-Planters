@@ -24,3 +24,22 @@ export const GET_ME = gql`
     }
   }
 `;
+
+export const GET_PLANT = gql`
+query plant {
+  plant {
+    plantId
+    name
+    scientificName
+    category
+    hardiness
+    sun
+    lifeSpan
+    medianLifespan
+    firstHarvest
+    lastHarvest
+    height
+    spread
+    image
+  }
+}`
