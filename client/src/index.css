@@ -10,6 +10,14 @@
  background-color: rgb(119, 135, 139);
 }
 
+.backgroundRed{
+  background-color: var(--red);
+}
+
+.backgroundGreen{
+  background-color: var(--green);
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }
@@ -50,6 +58,10 @@ h6 {
   color:var(--white);
 }
 
+.textGreen{
+  color:var(--green);
+}
+
 .dot {
   height: 200px;
   width: 200px;
@@ -77,4 +89,24 @@ h6 {
   background-color: var(--green);
   height:5px;
   width:100%;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--green) !important;
+}
+
+a:hover{
+  color: var(--white);
+}
+
+.backgroundRed:hover{
+  background-color: rgb(151, 74, 62);
+}
+
+.borderRed{
+  border: solid 1px var(--red);
+}
+
+.borderGreen{
+  border: solid 1px var(--green);
 }

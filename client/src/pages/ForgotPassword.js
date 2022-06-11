@@ -28,6 +28,7 @@ const ResetPass = () => {
   
     return (
       <>
+      <div className="text-center">
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
           <Form.Group>
             <Form.Label htmlFor='username'>Username</Form.Label>
@@ -54,6 +55,7 @@ const ResetPass = () => {
           </Form.Group>
           <Button disabled={!(userFormData.username && userFormData.password)} type="submit" variant='success'>Reset</Button>
         </Form>
+        </div>
       </>
     );
   };
