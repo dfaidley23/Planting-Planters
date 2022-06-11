@@ -37,7 +37,7 @@ query plant {
     lifeSpan
     medianLifespan
     firstHarvest
-    lastHarvest
+    lastHarvest 
     height
     spread
     image

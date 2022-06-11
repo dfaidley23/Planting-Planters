@@ -13,7 +13,6 @@ const plantSchema = new Schema({
   },
   scientificName: {
     type: String,
-    required: true,
   },
   category: {
     type: String,
@@ -44,7 +43,6 @@ const plantSchema = new Schema({
   },
   image: {
     type: String,
-    required: true,
   },
 });
 

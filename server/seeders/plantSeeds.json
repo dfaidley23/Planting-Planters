@@ -685,69 +685,7 @@
     "height": "",
     "spread": "",
     "image": "https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/58cee6acaea93d0004000009.jpg?1489954465"
-    },
+    }
      
-    { 
-    "plantId": "44",
-    "name": "",
-    "scientificName": "",
-    "category": "",
-    "hardiness": "",
-    "sun": "",
-    "lifeSpan": "",
-    "medianLifespan": "",
-    "firstHarvest": "",
-    "lastHarvest": "",
-    "height": "",
-    "spread": "",
-    "image": ""
-    },
-     
-    { 
-    "plantId": "45",
-    "name": "",
-    "scientificName": "",
-    "category": "",
-    "hardiness": "",
-    "sun": "",
-    "lifeSpan": "",
-    "medianLifespan": "",
-    "firstHarvest": "",
-    "lastHarvest": "",
-    "height": "",
-    "spread": "",
-    "image": ""
-    },
-     
-    { 
-    "plantId": "46",
-    "name": "",
-    "scientificName": "",
-    "category": "",
-    "hardiness": "",
-    "sun": "",
-    "lifeSpan": "",
-    "medianLifespan": "",
-    "firstHarvest": "",
-    "lastHarvest": "",
-    "height": "",
-    "spread": "",
-    "image": ""
-    },
-     
-    { 
-    "plantId": "47",
-    "name": "",
-    "scientificName": "",
-    "category": "",
-    "hardiness": "",
-    "sun": "",
-    "lifeSpan": "",
-    "medianLifespan": "",
-    "firstHarvest": "",
-    "lastHarvest": "",
-    "height": "",
-    "spread": "",
-    "image": "" 
-	}
+
 ]
