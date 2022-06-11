@@ -1,9 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Plant.js
-const plantSchema = require('./Plant');
-
 const userSchema = new Schema(
   {
     username: {
@@ -22,7 +19,12 @@ const userSchema = new Schema(
       required: true,
     },
     // set savedPlants to be an array of data that adheres to the plantSchema
-    savedPlants: [plantSchema],
+    savedPlants: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Plant',
+      },
+    ],
   },
   // set this to use virtual below
   {
