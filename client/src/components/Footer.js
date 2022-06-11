@@ -46,7 +46,7 @@ var arr = [];
 
 return(
 <>
-<div className="my-0 splitter">
+<div className=" splitterMargin splitter">
 </div>
 <div className=" pt-5 container-auto translate-middle center">
 <div className="">

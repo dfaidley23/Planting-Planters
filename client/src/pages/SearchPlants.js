@@ -3,7 +3,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import { useMutation } from '@apollo/client';
 import { ADD_PLANT } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { searchPlantDB } from '../utils/API';
+import { GET_PLANT } from '../utils/queries';
 import { savePlantIds, getSavedPlantIds } from '../utils/localStorage';
 
 const SearchPlants = () => {
@@ -25,8 +25,9 @@ const SearchPlants = () => {
     }
 
     try {
-      const response = await searchPlantDB(searchInput);
-
+      const response = await GET_PLANT(searchInput);
+      console.log("GET PLANT!")
+      console.log(response)
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
@@ -40,7 +41,7 @@ const SearchPlants = () => {
         category: plant.category,
         image: plant.imageLinks?.thumbnail || '',
       }));
-
+      console.log (plantData);
       setSearchedPlants(plantData);
       setSearchInput('');
     } catch (err) {
