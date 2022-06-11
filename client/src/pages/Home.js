@@ -4,7 +4,7 @@ import garden from '../Assets/Garden.jpeg';
 const Home = () => {
     return (
         <>
-        <div className="background textWhite">
+        <div className="background textWhite container-fluid homepageStyle mb-5">
         <div><h1 id="homeHeader">Welcome!</h1></div>
         <div className="container-fluid justify-content-center background">
         <div className="row align-items-start">
