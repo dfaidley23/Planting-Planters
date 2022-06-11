@@ -6,6 +6,8 @@
   
   }
 
+  *{font-family: 'Inconsolata', monospace;}
+
 .background{
  background-color: rgb(119, 135, 139);
 }
@@ -84,11 +86,12 @@ h6 {
 }
 
 .splitter{
-  margin:0;
+  margin:250px 0 0 0 ;
   display: inline-block;
   background-color: var(--green);
   height:5px;
   width:100%;
+
 }
 
 .nav-pills .nav-link.active {
@@ -109,4 +112,9 @@ a:hover{
 
 .borderGreen{
   border: solid 1px var(--green);
+}
+
+.homepageStyle{
+  height: 75%;
+  width: 100%;
 }

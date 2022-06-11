@@ -3,6 +3,10 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import { useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_PLANT } from '../utils/mutations';
 import Auth from '../utils/auth';
+<<<<<<< HEAD
+=======
+import { GET_PLANT } from '../utils/queries';
+>>>>>>> 505351cc19d92f190693450372472a24477da9cb
 import { savePlantIds, getSavedPlantIds } from '../utils/localStorage';
 import { GET_PLANT } from '../utils/queries';
 
