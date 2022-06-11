@@ -99,10 +99,10 @@ const SearchPlants = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
+        <h2 className="text-center textWhite">
           {searchedPlants.length
             ? `Viewing ${searchedPlants.length} results:`
-            : 'Search for a plant to begin'}
+            : ''}
         </h2>
         <CardColumns>
           {searchedPlants.map((plant) => {
