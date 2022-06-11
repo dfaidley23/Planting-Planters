@@ -26,8 +26,8 @@ export const GET_ME = gql`
 `;
 
 export const GET_PLANT = gql`
-query plant {
-  plant {
+query plant($name: String!) {
+  plant(name: $name) {
     plantId
     name
     scientificName

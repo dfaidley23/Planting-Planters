@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+// const db = require('../../../server/config/connection');
 
 const ResetPass = () => {
     const [userFormData, setUserFormData] = useState({ username: '', password: '' });
     const [validated] = useState(false);
   
     const handleInputChange = (event) => {
-      const { name, value } = event.target;
-      setUserFormData({ ...userFormData, [name]: value });
+      const { password, value } = event.target;
+      setUserFormData({ ...userFormData, [password]: value });
+
+      // db.findOneAndUpdate(
+      //  {'name' : userFormData.username},
+      //  {$set: {'password' : userFormData.password}},
+      // )
     };
   
     const handleFormSubmit = async (event) => {

@@ -1,47 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-import { useMutation } from '@apollo/client';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_PLANT } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { searchPlantDB } from '../utils/API';
 import { savePlantIds, getSavedPlantIds } from '../utils/localStorage';
+import { GET_PLANT } from '../utils/queries';
 
 const SearchPlants = () => {
   const [searchedPlants, setSearchedPlants] = useState([]);
   const [searchInput, setSearchInput] = useState('');
+  const [getPlant, { loading, data }] = useLazyQuery(GET_PLANT);
 
+
+  
   const [savedPlantIds, setSavedPlantIds] = useState(getSavedPlantIds());
   const [addPlant] = useMutation(ADD_PLANT);
-
+  
   useEffect(() => {
     return () => savePlantIds(savedPlantIds);
   });
-
+  
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     if (!searchInput) {
       return false;
     }
-
+    
     try {
-      const response = await searchPlantDB(searchInput);
+      const response = await getPlant({ variables :{
+        name: searchInput,
+      }});
+      console.log(response);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { items } = await response.json();
-
-      const plantData = items.map((plant) => ({
-        plantId: plant.id,
-        name: plant.name || ['No plant to display'],
-        scientificName: plant.scientificName,
-        category: plant.category,
-        image: plant.imageLinks?.thumbnail || '',
-      }));
-
-      setSearchedPlants(plantData);
+      const { plant } = await response.data;
+      setSearchedPlants(plant);
       setSearchInput('');
     } catch (err) {
       console.error(err);
