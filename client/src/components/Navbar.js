@@ -24,7 +24,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
               <Nav.Link as={Link} to='/search'>
-                Search for your area
+                Search
               </Nav.Link>
                   <Nav.Link as={Link} to='/saved'>
                     See your garden
