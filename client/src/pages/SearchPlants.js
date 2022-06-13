@@ -31,7 +31,6 @@ const SearchPlants = () => {
       const response = await getPlant({ variables :{
         name: searchInput,
       }});
-      console.log(response);
 
       const { plant } = await response.data;
       setSearchedPlants(plant);
@@ -40,28 +39,28 @@ const SearchPlants = () => {
       console.error(err);
     }
   };
-
+  
   const handleSavePlant = async (plantId) => {
     const plantToSave = searchedPlants.find((plant) => plant.plantId === plantId);
-
+    
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
-
+    
     if (!token) {
       return false;
     }
-
+    
     try {
       await addPlant({
         variables: { input: plantToSave },
       });
-
+      
       setSavedPlantIds([...savedPlantIds, plantToSave.plantId]);
     } catch (err) {
       console.error(err);
     }
   };
-
+  
   return (
     <>
       <Jumbotron fluid className='text-light text-center background'>
@@ -98,22 +97,21 @@ const SearchPlants = () => {
             : ''}
         </h2>
         <CardColumns>
-          {searchedPlants.map((plant) => {
+          {[searchedPlants].map(({name, image, plantId, hardiness}) => {
             return (
-              <Card key={plant.plantId} border='dark'>
-                {plant.image ? (
-                  <Card.Img src={plant.image} alt={`The cover for ${plant.name}`} variant='top' />
+              <Card key={plantId} border='dark'>
+                {image ? (
+                  <Card.Img src={image} alt={`The cover for ${name}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{plant.name}</Card.Title>
-                  {/* <p className='small'>Authors: {plant.authors}</p> */}
-                  <Card.Text>{plant.description}</Card.Text>
+                  <Card.Title>{name}</Card.Title>
+                  <Card.Text>{hardiness}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedPlantIds?.some((savedPlantId) => savedPlantId === plant.plantId)}
+                      disabled={savedPlantIds?.some((savedPlantId) => savedPlantId === plantId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSavePlant(plant.plantId)}>
-                      {savedPlantIds?.some((savedPlantId) => savedPlantId === plant.plantId)
+                      onClick={() => handleSavePlant(plantId)}>
+                      {savedPlantIds?.some((savedPlantId) => savedPlantId === plantId)
                         ? 'This plant has already been saved!'
                         : 'Save this Plant!'}
                     </Button>
