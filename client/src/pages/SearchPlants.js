@@ -97,7 +97,7 @@ const SearchPlants = () => {
             : ''}
         </h2>
         <CardColumns>
-          {[searchedPlants].map(({plantId, name, category, hardiness, sun, lifespan, image}) => {
+          {[searchedPlants].map(({plantId, name, category, hardiness, sun, lifeSpan, image}) => {
             return (
               <Card key={plantId} border='dark'>
                 {image ? (
@@ -108,7 +108,7 @@ const SearchPlants = () => {
                   <Card.Text>Category: {category}</Card.Text>
                   <Card.Text>Hardiness: {hardiness}</Card.Text>
                   <Card.Text>Sun: {sun}</Card.Text>
-                  <Card.Text>Lifespan: {lifespan}</Card.Text>
+                  <Card.Text>Lifespan: {lifeSpan}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedPlantIds?.some((savedPlantId) => savedPlantId === plantId)}
