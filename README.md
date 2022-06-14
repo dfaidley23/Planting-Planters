@@ -74,6 +74,15 @@ Hardniess zone map & Search functionality
 
 <img src="./assets/images/search.png" width="500">
 
+Plants Search Results
+
+<img src="./assets/images/Arugula.png" width="200">
+<img src="./assets/images/Broccoli.png" width="200">
+<img src="./assets/images/Carrot.png" width="200">
+<img src="./assets/images/Coriander.png" width="200">
+<img src="./assets/images/Tomato.png" width="200">
+
+
 <a id='screenshots' href='#readme-badges'><img id='usage' src='https://i.imgur.com/.png' style='height: 400px'></a>
 
 ## <a id='questions' href='#readme-badges'><img id='usage' src='https://imgur.com/Z3i069z.png' style='height: 40px'></a>
