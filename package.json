@@ -10,7 +10,7 @@
     "develop3": "export NODE_OPTIONS=--openssl-legacy-provider && concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build",
-    "seed" : "cd server && npm run seed"
+    "seed": "cd server && npm run seed"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,6 @@
     "concurrently": "^5.2.0"
   },
   "dependencies": {
-    "apollo": "^2.34.0"
+    "apollo": "^2.11.1"
   }
 }
